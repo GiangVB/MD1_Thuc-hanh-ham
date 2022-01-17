@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1> Length Converter</h1>
+<p>
+    <input id="inputFoot" type="number" placeholder="Foot" onchange="convertFoot()">
+</p>
+<p>Meter: <span id="outputMeter"></span></p>
+<p>
+    <input id="inputMeter" type="number" placeholder="Meter" onchange="convertMeter()">
+</p>
+<p>Foot: <span id="outputFoot"></span></p>
+<script>
+function footToMeter(foot){
+    let meter = 0.305 * foot;
+    return meter;
+}
+
+function meterToFoot(meter) {
+    let foot = 3.279 * meter;
+    return foot;
+}
+
+function convertFoot() {
+    let foot = parseFloat(document.getElementById("inputFoot").value);
+    let meter = footToMeter(foot);
+    document.getElementById("outputMeter").innerHTML = meter;
+}
+
+function convertMeter() {
+    let meter = parseFloat(document.getElementById("inputMeter").value);
+    let foot = meterToFoot(meter);
+    document.getElementById("outputFoot").innerHTML = foot;
+}
+</script>
+</body>
+</html>
